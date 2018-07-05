@@ -34,13 +34,17 @@ class Home extends React.Component {
         document.body.style.backgroundSize = "cover";
       }
     
-    componentWillUnmount(){
-        document.body.style.backgroundColor = null;
-        //issue with unmounting
-    }
-
     render() {
-        return (<p></p>)
+        return (
+        <div className="container">
+            <div className="card text-center">
+                <div className="card-body">
+                    <h5 className="card-title">thoughtJot</h5>
+                    <p className="card-text">blah blah blah slogan blah blah.</p>
+                    <a href="/signup" className="btn btn-light">Get Started</a>
+                </div>
+            </div>
+        </div>)
     }
 }
 

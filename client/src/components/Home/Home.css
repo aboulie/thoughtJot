@@ -1,12 +1,15 @@
-.appName {
+/* .appName {
     margin-top: 180px;
-}
+} */
 
 .card {
-    justify-content: center;
-}
-
-.card {
+    margin-top: 50px;
+    align-content: center;
     background: none;
     border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card-body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
