@@ -5,6 +5,8 @@ import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
+import Entry from "./components/Entry"
+import Reflect from "./components/Reflect"
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/entry" component={Entry} />
+          <Route exact path="/reflect" component={Reflect} />
           <Route component={NoMatch} />
         </Switch>
       </div>

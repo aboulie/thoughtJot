@@ -1,17 +1,9 @@
-// h1 {
-//     color: white;
-//     text-align: center;
-//     font-family: Lucida Console;
-// } 
-
-
-
 import React from "react";
 // import API from "../../utils/API";
 // import axios from "axios";
 import "./Home.css";
 // import swal from 'sweetalert';
-import Background from '../../images/journal8.jpeg';
+import Background from '../../images/journal.jpeg';
 
 // const mainBg = {
 //     backgroundImage: `url(${Background})`,
