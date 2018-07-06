@@ -13,7 +13,7 @@ const style = {
     maxWidth: 800,
     minWidth: 800,
     border: "1px solid",
-    margin: 10,
+    marginBottom: 10,
     padding: 10,
     background: "white",
     fontFamily: "Lucida Sans"
