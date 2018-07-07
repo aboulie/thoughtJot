@@ -5,7 +5,7 @@ import Background from '../../images/background.png';
 class Signup extends React.Component {
   state = {
     name: "",
-    username: "",
+    email: "",
     password: ""
   };
 
@@ -15,26 +15,13 @@ class Signup extends React.Component {
     document.body.style.backgroundSize = "cover";
   }
 
+  handleChange = (event) => {
+		const state = this.state;
+		state[event.target.name] = event.target.value;
+		this.setState(state, () => console.log(this.state));
+	}
 
-  handleNamePress = event => {
-    this.setState({
-      name: event.target.value
-    })
-  }
-
-  handleUsernameKeyPress = event => {
-    this.setState({
-      username: event.target.value
-    })
-  }
-
-  handlePasswordPress = event => {
-    this.setState({
-      password: event.target.value    //make this secure later
-    })
-  }
-
-  handleSubmit = (event, name, username, password) => {
+  handleSubmit = (event, name, email, password) => {
     event.preventDefault();
     //LOGIN LOGIC 
   }
@@ -50,22 +37,30 @@ class Signup extends React.Component {
       <form className="centered">
         <div class="form-group">
           <label for="exampleInputEmail1">Name</label>
-            <input type="text" 
-            class="form-control" id="exampleInputEmail1" 
-            onKeyPress={(event)=>this.handleNamePress(event)} />
+            <input 
+            type="text" 
+            class="form-control" 
+            id="exampleInputEmail1" 
+            onChange = {this.handleChange}
+            value = {this.state.name}
+            name = "name" />
         </div>
   
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
+          <label for="exampleInputEmail1">Email</label>
           <input type="text" 
           class="form-control" id="exampleInputEmail1" 
-          onKeyPress={(event)=>this.handleUsernameKeyPress(event)} />
+          onChange = {this.handleChange}
+          value = {this.state.email}
+          name = "email" />
         </div>
 
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1"
-          onKeyPress={(event)=>this.handlePasswordPress(event)} />
+          onChange = {this.handleChange}
+          value = {this.state.password}
+          name = "password" />
         </div>
 
         <button type="submit" 

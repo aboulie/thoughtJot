@@ -9,6 +9,8 @@ class Login extends React.Component {
     password: ""
   };
 
+  //FUNCTION: api call, check db for user 
+
   componentDidMount(){
     document.body.style.backgroundImage=`url(${Background})`;
     document.body.style.backgroundRepeat = "no-repeat";
