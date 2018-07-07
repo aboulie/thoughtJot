@@ -1,11 +1,11 @@
 import React from "react";
 import "./Login.css";
 import Background from '../../images/background.png';
+import axios from 'axios';
 
 class Login extends React.Component {
   state = {
-    name: "",
-    username: "",
+    email: "",
     password: ""
   };
 
@@ -17,21 +17,23 @@ class Login extends React.Component {
     document.body.style.backgroundSize = "cover";
   }
 
-  handleUsernameKeyPress = event => {
-    this.setState({
-      username: event.target.value
-    })
-  }
+  handleChange = (event) => {
+		const state = this.state;
+		state[event.target.name] = event.target.value;
+		this.setState(state, () => console.log(this.state));
+	}
 
-  handlePasswordPress = event => {
-    this.setState({
-      password: event.target.value    //make this secure later
-    })
-  }
-
-  handleSubmit = (event, username, password) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    //LOGIN LOGIC 
+    const {email, password} = this.state;
+    axios.post("/login", {
+      email, password
+    }).then(function(data){
+        window.location.href = "/entry"
+    }).catch(function(error){
+      console.log("we got error");
+      console.log(error);
+    })
   }
 
   render() {
@@ -46,16 +48,20 @@ class Login extends React.Component {
 
   
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
+          <label for="exampleInputEmail1">Email</label>
           <input type="text" 
           class="form-control" id="exampleInputEmail1" 
-          onKeyPress={(event)=>this.handleUsernameKeyPress(event)} />
+          onChange = {this.handleChange} 
+          value = {this.state.email}
+          name = "email"/>
         </div>
 
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1"
-          onKeyPress={(event)=>this.handlePasswordPress(event)} />
+          onChange = {this.handleChange}
+          value = {this.state.password}
+          name = "password" />
         </div>
 
         <button type="submit" 
