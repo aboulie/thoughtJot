@@ -1,11 +1,11 @@
 {
     "development": {
       "username": "root",
-      "port": 8889,
       "password": "root",
       "database": "thoughtjot",
       "host": "localhost",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "port": 8889
     },
     "test": {
       "username": "root",

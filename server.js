@@ -2,6 +2,7 @@ const createError = ('http-errors');
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const cors = require("cors");
 const app = express();
 var passport = require('passport');
 var nodemon = require("nodemon");
@@ -44,6 +45,8 @@ app.use(session({
 // passport initialize and serialize
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(cors());
 
 passport.serializeUser(function(user, done){
   done(null, user.id);
@@ -93,7 +96,7 @@ passport.use(new LocalStrategy({
 
 // sync with database
 db.sequelize.sync().then(function(){
-	app.listen(port, () => console.log(`Listening on port ${PORT}`));
+	app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 })
 
 module.exports = app;
