@@ -1,45 +1,65 @@
 import React from "react";
 import "./Entry.css";
+import { Redirect, Link } from 'react-router-dom';
+import axios from 'axios';
 import Background from '../../images/background.png';
 
 class Entry extends React.Component {
   state = {
     title: "",
     entry: "",
-    image: ""
+    image: "",
+    redirectToLogin: false
   };
 
   componentDidMount(){
+    var self = this;
     document.body.style.backgroundImage=`url(${Background})`;
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+        axios.post('/authuser')
+        .then(function(data){
+            console.log("USER IS LOGGED IN");
+          })
+          .catch(function(error){
+            console.log(error);
+            self.setState({ redirectToLogin: true });
+        })
+        console.log(this.state);
   }
 
+  handleChange = (event) => {
+		const state = this.state;
+		state[event.target.name] = event.target.value;
+		this.setState(state, () => console.log(this.state));
+	}
 
-  handleTitlePress = event => {
-    this.setState({
-      title: event.target.value
-    })
-  }
+ 
 
-  handleEntryKeyPress = event => {
-    this.setState({
-      entry: event.target.value
-    })
-  }
-
-  handleImagePress = event => {
-    this.setState({
-      image: event.target.value
-    })
-  }
-
-  handleSubmit = (event, title, entry, image) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    //LOGIN LOGIC 
+    const {title, entry, image} = this.state;
+    //post to API to add new entry to userData DB
+    axios.post("/submit", {
+      title, entry, image
+    }).then(function(data){
+        console.log(data);
+    }).catch(function(error){
+      console.log(error);
+      console.log("YOU SHALL NOT POST");
+    })
   }
 
   render() {
+
+    const { redirectToLogin } = this.state;
+
+		if(redirectToLogin) {
+			return <Redirect to={{ pathname: '/login' }} />
+		} else {
+
+
+
     return (
     <div className="container">
            <div className="card text-center">
@@ -53,7 +73,9 @@ class Entry extends React.Component {
             <input type="text" 
             class="form-control" 
             placeholder= "Required: Title"
-            onKeyPress={(event)=>this.handleTitlePress(event)} />
+            onChange = {this.handleChange} 
+            value = {this.state.title}
+            name = "title" />
         </div>
   
         <div class="form-group">
@@ -61,7 +83,9 @@ class Entry extends React.Component {
           <input type="text" 
           class="form-control" 
           placeholder="Required: Thoughts"
-          onKeyPress={(event)=>this.handleEntryKeyPress(event)} />
+          onChange = {this.handleChange} 
+          value = {this.state.entry}
+          name = "entry" />
         </div>
 
         <div class="form-group">
@@ -69,7 +93,9 @@ class Entry extends React.Component {
           <input type="text" 
           class="form-control" 
           placeholder="Optional: image URL"
-          onKeyPress={(event)=>this.handleImagePress(event)} />
+          onChange = {this.handleChange} 
+          value = {this.state.image}
+          name = "image"/>
         </div>
 
         <button type="submit" 
@@ -80,6 +106,7 @@ class Entry extends React.Component {
 </div>
 
        )
+      }
     }
 }
 export default Entry;

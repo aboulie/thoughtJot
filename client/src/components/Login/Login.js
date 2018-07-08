@@ -48,7 +48,7 @@ class Login extends React.Component {
 
   
         <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
+          <label htmlFor="exampleInputEmail1">Email</label>
           <input type="text" 
           class="form-control" id="exampleInputEmail1" 
           onChange = {this.handleChange} 
@@ -57,7 +57,7 @@ class Login extends React.Component {
         </div>
 
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label htmlFor="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1"
           onChange = {this.handleChange}
           value = {this.state.password}
