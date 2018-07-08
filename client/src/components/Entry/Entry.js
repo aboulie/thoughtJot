@@ -70,8 +70,6 @@ class Entry extends React.Component {
 			return <Redirect to={{ pathname: '/login' }} />
 		} else {
 
-
-
     return (
     <div className="container">
            <div className="card text-center">

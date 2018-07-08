@@ -13,6 +13,8 @@ const app = express();
 router.post('/login',
 passport.authenticate('local'), (req, res, next) => {
   if (req.user){
+    console.log('************* REQ USER ********')
+    console.log(req.user);
     var redir = {redirect: '/entry'};
     return res.json(redir);
   }

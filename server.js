@@ -65,7 +65,6 @@ passport.deserializeUser(function(id, done){
 })
 
 // app.use('/', express.static('client/build'));
-
 app.use('/', indexRouter);
 app.use('/', addUserRouter);
 app.use('/', loginRouter);

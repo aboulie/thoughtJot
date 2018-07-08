@@ -6,15 +6,31 @@ const router = express.Router();
 const db = require('./../models');
 const app = express();
 
+// router.post("/loggedInUser", function(request, response){
+// 	if (request.user){
+// 		console.log("User is logged in and we know it")
+// 		db.UserData.create({
+//             title: title,
+//             entry: entry,
+//             image: image
+// 		}).then(function(data){
+// 			response.json(data);
+// 		})
+// 	} else{
+// 		response.status(401);
+// 		response.json({message: "not logged in"})
+// 	}
+// })
 // app.use(cors());
-
 // checks if a user is logged in. If logged in, allow to submit post 
 router.post('/submit', function(request, response){
+	console.log("post route hit");
+	console.log(request.user)
 	if(request.user) { //user is keyword
 		db.UserData.create({
-            title: title,
-            entry: entry,
-            image: image
+            title: request.body.title,
+            entry: request.body.entry,
+            image: request.body.image
 		}).then(function(data){
 			response.json(data);
 		})
