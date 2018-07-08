@@ -6,6 +6,7 @@ import "./Reflect.css";
 import Background from '../../images/background.png';
 // import { render } from "react-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+import {Link } from 'react-router-dom';
 
 const style = {
     margin: "0 auto",
@@ -46,6 +47,10 @@ class Reflect extends React.Component {
         return (
           <div className="container">
             <h1 className="test">My Enteries</h1>
+            <Link to="/entry">
+        <button type="submit" 
+        className="btn btn-light submitStyle">Post new entry</button>
+</Link>
             <hr />
             <InfiniteScroll
               dataLength={this.state.items.length}

@@ -40,6 +40,7 @@ class Entry extends React.Component {
     event.preventDefault();
     const {title, entry, image} = this.state;
     //post to API to add new entry to userData DB
+    
     axios.post("/submit", {
       title, entry, image
     }).then(function(data){
@@ -68,30 +69,30 @@ class Entry extends React.Component {
                 </div>
             </div>
       <form className="centered">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Entry Title</label>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Entry Title</label>
             <input type="text" 
-            class="form-control" 
+            className="form-control" 
             placeholder= "Required: Title"
             onChange = {this.handleChange} 
             value = {this.state.title}
             name = "title" />
         </div>
   
-        <div class="form-group">
-          <label for="exampleInputEmail1">What's on your mind?</label>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">What's on your mind?</label>
           <input type="text" 
-          class="form-control" 
+          className="form-control" 
           placeholder="Required: Thoughts"
           onChange = {this.handleChange} 
           value = {this.state.entry}
           name = "entry" />
         </div>
 
-        <div class="form-group">
-          <label for="exampleInputEmail1">A picture is worth 1000 words...</label>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">A picture is worth 1000 words...</label>
           <input type="text" 
-          class="form-control" 
+          className="form-control" 
           placeholder="Optional: image URL"
           onChange = {this.handleChange} 
           value = {this.state.image}
@@ -99,9 +100,15 @@ class Entry extends React.Component {
         </div>
 
         <button type="submit" 
-        class="btn btn-light submitStyle"
+        className="btn btn-light submitStyle"
         onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
-        >Submit</button>
+        >Submit New Entry</button>
+
+ <Link to="/reflect">
+        <button type="submit" 
+        className="btn btn-light submitStyle">See Your Entries</button>
+</Link>
+        
     </form>
 </div>
 
