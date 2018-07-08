@@ -25,3 +25,28 @@ form{
 .centered {
     margin: 0 auto;
   }
+
+  .already {
+      margin-top: -18px;
+      font-size: 12px;
+  }
+
+ /* unvisited link */
+a:link {
+    color:#8ca778;
+}
+
+/* visited link */
+a:visited {
+    color:#8ca778;
+}
+
+/* mouse over link */
+a:hover {
+    color: #cee1c0;
+}
+
+/* selected link */
+a:active {
+    color:#cee1c0;
+}

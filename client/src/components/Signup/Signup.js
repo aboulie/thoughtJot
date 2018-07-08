@@ -75,6 +75,11 @@ class Signup extends React.Component {
         className="btn btn-light submitStyle"
         onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
         >Submit</button>
+
+        <p className="already">Already a thoughtJotter? 
+        <a href="/login">Login Here</a>
+        </p>
+
     </form>
 </div>
 
