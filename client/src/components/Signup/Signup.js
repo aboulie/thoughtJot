@@ -2,6 +2,8 @@ import React from "react";
 import "./Signup.css";
 import Background from '../../images/background.png';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 class Signup extends React.Component {
   state = {
@@ -30,6 +32,10 @@ class Signup extends React.Component {
       name, email, password
     }).then(function(data){
         console.log(data);
+        //sweet alert
+        swal("You're all signed up!", "Log in to see your account!", "success");
+        //then redirect
+        window.location.href = "/login";
     }).catch(function(error){
       console.log(error);
     })

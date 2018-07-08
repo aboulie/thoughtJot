@@ -1,6 +1,6 @@
 import React from "react";
 // import API from "../../utils/API";
-// import axios from "axios";
+import axios from "axios";
 // import swal from 'sweetalert';
 import "./Reflect.css";
 import Background from '../../images/background.png';
@@ -32,6 +32,18 @@ class Reflect extends React.Component {
         document.body.style.backgroundSize = "cover";
       }
     
+
+      handleLogout = (event) => {
+        event.preventDefault();
+        axios.post("/logout", {
+        }).then(function(data){
+            window.location.href = "/login"
+        }).catch(function(error){
+          console.log("we got error");
+          console.log(error);
+        })
+      }
+
     
       fetchMoreData = () => {
         // a fake async api call like which sends
@@ -51,6 +63,14 @@ class Reflect extends React.Component {
         <button type="submit" 
         className="btn btn-light submitStyle">Post new entry</button>
 </Link>
+
+
+        <button type="submit" 
+        className="btn btn-light submitStyle"
+        onClick={(event)=>this.handleLogout(event)}
+        >Logout</button>
+
+
             <hr />
             <InfiniteScroll
               dataLength={this.state.items.length}

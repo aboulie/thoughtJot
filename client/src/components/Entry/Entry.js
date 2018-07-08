@@ -32,7 +32,18 @@ class Entry extends React.Component {
 		const state = this.state;
 		state[event.target.name] = event.target.value;
 		this.setState(state, () => console.log(this.state));
-	}
+  }
+  
+  handleLogout = (event) => {
+    event.preventDefault();
+    axios.post("/logout", {
+    }).then(function(data){
+        window.location.href = "/login"
+    }).catch(function(error){
+      console.log("we got error");
+      console.log(error);
+    })
+  }
 
  
 
@@ -108,6 +119,11 @@ class Entry extends React.Component {
         <button type="submit" 
         className="btn btn-light submitStyle">See Your Entries</button>
 </Link>
+
+        <button type="submit" 
+        className="btn btn-light submitStyle"
+        onClick={(event)=>this.handleLogout(event)}
+        >Logout</button>
         
     </form>
 </div>
