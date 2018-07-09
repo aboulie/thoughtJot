@@ -7,7 +7,14 @@
 }
 
 h4 {
-    color:rgb(59, 14, 131);
+    color:#005588;
     padding: 10px;
 
+}
+
+.imageStyle {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
 }

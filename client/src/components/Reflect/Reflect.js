@@ -1,11 +1,7 @@
 import React from "react";
-// import API from "../../utils/API";
 import axios from "axios";
-// import swal from 'sweetalert';
 import "./Reflect.css";
 import Background from '../../images/background.png';
-// import { render } from "react-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { Redirect, Link } from 'react-router-dom';
 
 const style = {
@@ -23,7 +19,6 @@ const style = {
 
 class Reflect extends React.Component {
      state = {
-        items: Array.from({ length: 8 }),
         redirectToLogin: false,
         postData: []
       };
@@ -35,18 +30,16 @@ class Reflect extends React.Component {
         document.body.style.backgroundSize = "cover";
         axios.post('/authuser')
         .then(function(data){
-            console.log("USER IS LOGGED IN");
             self.setState({postData: data.data});
-            console.log(data.data);
           })
           .catch(function(error){
             console.log(error);
             self.setState({ redirectToLogin: true });
         });
-        // this.showPosts();
+        // this.showPostsDeets();
       }
     
-      // showPosts() {
+      // showPostsDeets() {
       //     var self = this;
       //     var id = this.props.match.params.id;
       //     console.log("ID " + self.state.id);
@@ -75,17 +68,6 @@ class Reflect extends React.Component {
         })
       }
 
-    
-      fetchMoreData = () => {
-        // a fake async api call like which sends
-        // 20 more records in 1.5 secs
-        setTimeout(() => {
-          this.setState({
-            items: this.state.items.concat(Array.from({ length: 20 }))
-          });
-        }, 1500);
-      };
-    
       render() {
         const { redirectToLogin } = this.state;
 
@@ -108,19 +90,18 @@ class Reflect extends React.Component {
 
 
             <hr />
-            <InfiniteScroll
-              dataLength={this.state.items.length}
-              next={this.fetchMoreData}
-              hasMore={true}
-              loader={<h4>More Entries Loading...</h4>}
-            >
-              {this.state.items.map((i, index) => (
+         
+              {this.state.postData.map((iterator, index) => (
                 <div 
                 style={style} key={index}>
                   div - #{index}
+                  title: {iterator.title}
+                  <br />
+                  entry: {iterator.entry}
+    
                 </div>
               ))}
-            </InfiniteScroll>
+           
           </div>
         );
       }
