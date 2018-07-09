@@ -32,10 +32,19 @@ class Signup extends React.Component {
       name, email, password
     }).then(function(data){
         console.log(data);
-        //sweet alert
-        swal("You're all signed up!", "Log in to see your account!", "success");
-        //then redirect
-        window.location.href = "/login";
+        // //sweet alert
+        // swal("You're all signed up!", "Log in to see your account!", "success");
+        // //then redirect
+        // window.location.href = "/login";
+        swal({
+          title: "Congrats! You Signed Up!",
+          text: "Get started by logging in",
+          type: "success"
+          }).then(function() {
+          // Redirect the user
+          window.location.href = "/login";
+          console.log('The Ok Button was clicked.');
+          });
     }).catch(function(error){
       console.log(error);
     })

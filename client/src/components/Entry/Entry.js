@@ -3,6 +3,7 @@ import "./Entry.css";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import Background from '../../images/background.png';
+import swal from 'sweetalert';
 
 class Entry extends React.Component {
   state = {
@@ -45,7 +46,16 @@ class Entry extends React.Component {
     })
   }
 
- 
+ handleAlert(){
+    swal({ 
+      title: "sdlfjg",
+       text: "asdff",
+        type: "success" 
+      },
+      function(){
+        window.location.href = '/reflect';
+    });
+ }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -55,10 +65,19 @@ class Entry extends React.Component {
     axios.post("/submit", {
       title, entry, image
     }).then(function(data){
-        console.log(data);
+        // console.log(data);
+                swal({
+                  title: "Entry Posted!",
+                  text: "Check out your old entries",
+                  type: "success"
+                  }).then(function() {
+                  // Redirect the user
+                  window.location.href = "/reflect";
+                  console.log('The Ok Button was clicked.');
+                  });
     }).catch(function(error){
       console.log(error);
-      console.log("YOU SHALL NOT POST");
+      console.log("post error");
     })
   }
 

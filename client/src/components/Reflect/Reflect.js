@@ -6,7 +6,7 @@ import "./Reflect.css";
 import Background from '../../images/background.png';
 // import { render } from "react-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 const style = {
     margin: "0 auto",
@@ -23,15 +23,44 @@ const style = {
 
 class Reflect extends React.Component {
      state = {
-        items: Array.from({ length: 20 })
+        items: Array.from({ length: 8 }),
+        redirectToLogin: false,
+        searchData: ""
       };
   
     componentDidMount(){
+        var self = this;
         document.body.style.backgroundImage=`url(${Background})`;
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover";
+        axios.post('/authuser')
+        .then(function(data){
+            console.log("USER IS LOGGED IN");
+            console.log(data.data);
+          })
+          .catch(function(error){
+            console.log(error);
+            self.setState({ redirectToLogin: true });
+        });
+        this.showPosts();
       }
     
+      showPosts() {
+          var id = 2;
+          var self = this;
+      
+          axios.post('/grabposts/' + id)
+          .then(function(data){
+            self.setState({searchData: data.data});
+            console.log("SEARCH DATATATATATA");
+            console.log(data.data);
+            console.log("HEYYYY" + data.data.name);
+            //HOW TO GET ACTUAL POST?!?!?
+          })
+          .catch(function(error){
+            console.log(error);
+          });
+      }
 
       handleLogout = (event) => {
         event.preventDefault();
@@ -56,13 +85,18 @@ class Reflect extends React.Component {
       };
     
       render() {
+        const { redirectToLogin } = this.state;
+
+        if(redirectToLogin) {
+          return <Redirect to={{ pathname: '/login' }} />
+        } else {
         return (
           <div className="container">
             <h1 className="test">My Enteries</h1>
             <Link to="/entry">
         <button type="submit" 
         className="btn btn-light submitStyle">Post new entry</button>
-</Link>
+        </Link>
 
 
         <button type="submit" 
@@ -76,7 +110,7 @@ class Reflect extends React.Component {
               dataLength={this.state.items.length}
               next={this.fetchMoreData}
               hasMore={true}
-              loader={<h4>Loading...</h4>}
+              loader={<h4>More Entries Loading...</h4>}
             >
               {this.state.items.map((i, index) => (
                 <div 
@@ -89,6 +123,7 @@ class Reflect extends React.Component {
         );
       }
     }
+  }
 
 
 export default Reflect;

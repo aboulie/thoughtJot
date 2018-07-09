@@ -1,20 +1,20 @@
 const express = require('express');
-const passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
-// const cors = require('cors');
 const router = express.Router();
 const db = require('./../models');
-const app = express();
 
-// app.use(cors());
-//GRAB POSTS
-//checks if a user is logged in...if logged in, then show all enteries 
-router.post('/grabposts', function(request, response){
-    if(request.user){ //user is a passport object ...if our req gives response that has a user
-        db.UserData.findAll({
-			where: {userId: request.user.id}
+router.post('/grabposts/:id', function(request, response){
+	console.log("post route hit");
+	console.log(request.user);
+	if(request.user) {
+		console.log('************* grab post REQ USER ********')
+		console.log(request.user);
+		db.UserData.findOne({
+			where: {userId: request.user.id, id: request.params.id}
 		}).then(function(data){
-			response.json(data);
+			
+			console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");	
+			console.log(request.user);	
+			response.json(request.user);
 		})
 	} else {
 		response.status(401);
@@ -23,4 +23,3 @@ router.post('/grabposts', function(request, response){
 })
 
 module.exports = router;
-
