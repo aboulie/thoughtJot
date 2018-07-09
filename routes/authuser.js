@@ -11,10 +11,7 @@ router.post('/authuser', function(request, response){
 			where: {userId: request.user.id},
 			order: [['updatedAt', 'DESC']]
 		}).then(function(data){
-			response.json(request.user.id);
-			console.log("---------------backend logged in------------");
-			console.log("idddddd");
-			console.log(request.user.id);
+			response.json(data);
 		})
 	} else {
 		response.status(401);

@@ -25,7 +25,7 @@ class Reflect extends React.Component {
      state = {
         items: Array.from({ length: 8 }),
         redirectToLogin: false,
-        searchData: ""
+        postData: []
       };
   
     componentDidMount(){
@@ -36,32 +36,33 @@ class Reflect extends React.Component {
         axios.post('/authuser')
         .then(function(data){
             console.log("USER IS LOGGED IN");
+            self.setState({postData: data.data});
             console.log(data.data);
           })
           .catch(function(error){
             console.log(error);
             self.setState({ redirectToLogin: true });
         });
-        this.showPosts();
+        // this.showPosts();
       }
     
-      showPosts() {
-          var id = 1;
-          var self = this;
+      // showPosts() {
+      //     var self = this;
+      //     var id = this.props.match.params.id;
+      //     console.log("ID " + self.state.id);
       
-          axios.post('/grabposts/' + id)
-          .then(function(data){
-            self.setState({searchData: data.data});
-            console.log("SEARCH DATA--------");
-            console.log(data.data);
-            console.log("data.data.name = " + data.data.name);
-            console.log("data id= " + data.data.id);
-            //HOW TO GET ACTUAL POST?!?!?
-          })
-          .catch(function(error){
-            console.log(error);
-          });
-      }
+      //     axios.post('/grabposts/' + id)
+      //     .then(function(data){
+      //       console.log("DATA--------");
+      //       console.log(data);
+      //       console.log("data id= " + self.state.id);
+      //       //HOW TO GET ACTUAL POST?!?!?
+
+      //     })
+      //     .catch(function(error){
+      //       console.log(error);
+      //     });
+      // }
 
       handleLogout = (event) => {
         event.preventDefault();
