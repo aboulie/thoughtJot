@@ -46,15 +46,16 @@ class Reflect extends React.Component {
       }
     
       showPosts() {
-          var id = 2;
+          var id = 1;
           var self = this;
       
           axios.post('/grabposts/' + id)
           .then(function(data){
             self.setState({searchData: data.data});
-            console.log("SEARCH DATATATATATA");
+            console.log("SEARCH DATA--------");
             console.log(data.data);
-            console.log("HEYYYY" + data.data.name);
+            console.log("data.data.name = " + data.data.name);
+            console.log("data id= " + data.data.id);
             //HOW TO GET ACTUAL POST?!?!?
           })
           .catch(function(error){

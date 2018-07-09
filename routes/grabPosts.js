@@ -6,10 +6,8 @@ router.post('/grabposts/:id', function(request, response){
 	console.log("post route hit");
 	console.log(request.user);
 	if(request.user) {
-		console.log('************* grab post REQ USER ********')
-		console.log(request.user);
 		db.UserData.findOne({
-			where: {userId: request.user.id, id: request.params.id}
+			where: {UserId: request.user.id, id: request.params.id}
 		}).then(function(data){
 			
 			console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");	
