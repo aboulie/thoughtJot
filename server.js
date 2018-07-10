@@ -19,6 +19,8 @@ var db = require("./models");
 //   app.use(express.static("client/build"));
 // }
 
+app.use(express.static("client/build"));
+
 //API routes
 const indexRouter = require("./routes/index");
 const addUserRouter = require("./routes/addUser");
