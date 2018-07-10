@@ -4,17 +4,7 @@ import "./Reflect.css";
 import Background from '../../images/background.png';
 import { Redirect, Link } from 'react-router-dom';
 
-const style = {
-    margin: "0 auto",
-    height: 200,
-    maxWidth: 800,
-    minWidth: 800,
-    border: "1px solid",
-    marginBottom: 10,
-    padding: 10,
-    background: "white",
-    fontFamily: "Lucida Sans"
-  };
+
 
 
 class Reflect extends React.Component {
@@ -36,27 +26,9 @@ class Reflect extends React.Component {
             console.log(error);
             self.setState({ redirectToLogin: true });
         });
-        // this.showPostsDeets();
       }
     
-      // showPostsDeets() {
-      //     var self = this;
-      //     var id = this.props.match.params.id;
-      //     console.log("ID " + self.state.id);
-      
-      //     axios.post('/grabposts/' + id)
-      //     .then(function(data){
-      //       console.log("DATA--------");
-      //       console.log(data);
-      //       console.log("data id= " + self.state.id);
-      //       //HOW TO GET ACTUAL POST?!?!?
-
-      //     })
-      //     .catch(function(error){
-      //       console.log(error);
-      //     });
-      // }
-
+  
       handleLogout = (event) => {
         event.preventDefault();
         axios.post("/logout", {
@@ -92,14 +64,19 @@ class Reflect extends React.Component {
             <hr />
          
               {this.state.postData.map((iterator, index) => (
-                <div 
-                style={style} key={index}>
-                  div - #{index}
-                  title: {iterator.title}
-                  <br />
-                  entry: {iterator.entry}
-    
-                </div>
+                <div className="card overflow-hidden">
+              <div class="card-header titleStyle">
+                {iterator.title}
+              </div>
+              <div class="card-body">
+               {/* <div className="imageStyle">
+               <img className="img-fluid" src={iterator.image} alt={iterator.title}/>
+              </div> */}
+
+              <p class="card-text">{iterator.entry}</p>
+  </div>
+</div>
+                
               ))}
            
           </div>

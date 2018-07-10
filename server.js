@@ -27,6 +27,7 @@ const loginRouter = require("./routes/login");
 const grabpostRouter = require("./routes/grabPosts");
 const submitRouter = require("./routes/submit");
 const authUserRouter = require("./routes/authuser");
+const detailRouter = require("./routes/detail");
 
 //view engine setup
 // app.set('views', path.join(_dirname, 'views'));
@@ -71,6 +72,7 @@ app.use('/', loginRouter);
 app.use('/', grabpostRouter);
 app.use('/', submitRouter);
 app.use('/', authUserRouter);
+app.use('/', detailRouter);
 
 //setup passport log in authentication
 passport.use(new LocalStrategy({

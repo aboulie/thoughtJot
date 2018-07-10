@@ -1,20 +1,32 @@
-
-
 .test{
     margin-top: 40px;
     margin-bottom: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h4 {
-    color:#005588;
-    padding: 10px;
-
-}
-
 .imageStyle {
     max-width: 200px;
     min-width: 200px;
     max-height: 200px;
-    min-height: 200px;
+    /* min-height: 200px; */
+}
+
+.overflow-hidden {
+    overflow-y: scroll;
+        margin: 0 auto;
+        height: 200px;
+        max-width: 800px;
+        min-width: 800px;
+        border: 1px solid;
+        margin-bottom: 10px;
+        padding: 5px;
+        background: white;
+        font-family: Lucida Sans;
+      }
+
+
+.titleStyle {
+    color: #005588;
+    font-size: 22px;
+    background: white;
 }
