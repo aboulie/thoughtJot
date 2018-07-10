@@ -18,7 +18,7 @@ This is a fullstack web application that allows users to login in to their own a
 - CSS3, Bootstrap
 - Yarn 
 - Heroku 
-- NPM packages: sweetalert, cors, passport,, bcrypt, and more. 
+- NPM packages: sweetalert, cors, passport, bcrypt, and more. 
 
 
 
