@@ -2,7 +2,7 @@ import React from "react";
 import "./Entry.css";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
-import Background from '../../images/bg2.jpeg';
+import Background from '../../images/bg5.jpeg';
 import swal from 'sweetalert';
 
 class Entry extends React.Component {
@@ -96,13 +96,12 @@ class Entry extends React.Component {
                     
                 </div>
             </div>
-      <form className="centered">
+      <form className="centered border-0">
       <p className="card-title jotTitle">Jot Down Your Thoughts</p>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Entry Title</label>
             <input type="text" 
             className="form-control" 
-            placeholder= "Required: Title"
             onChange = {this.handleChange} 
             value = {this.state.title}
             name = "title" />
@@ -112,7 +111,6 @@ class Entry extends React.Component {
           <label htmlFor="exampleInputEmail1">What's on your mind?</label>
           <input type="text" 
           className="form-control inputEntry" 
-          placeholder="Required: Thoughts"
           onChange = {this.handleChange} 
           value = {this.state.entry}
           name = "entry" />

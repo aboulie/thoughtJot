@@ -32,9 +32,9 @@ form{
   }
 
   .jotTitle{
-      color: blue;
+    font-size: 20px;
   }
 
-  .jotCard{
-      margin-top: 100px;
-  }
+  /* .jotCard{
+      margin-top: 180px;
+  } */
