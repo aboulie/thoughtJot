@@ -46,17 +46,6 @@ class Entry extends React.Component {
     })
   }
 
- handleAlert(){
-    swal({ 
-      title: "sdlfjg",
-       text: "asdff",
-        type: "success" 
-      },
-      function(){
-        window.location.href = '/reflect';
-    });
- }
-
   handleSubmit = (event) => {
     event.preventDefault();
     const {title, entry, image} = this.state;
@@ -68,7 +57,7 @@ class Entry extends React.Component {
         // console.log(data);
                 swal({
                   title: "Entry Posted!",
-                  text: "Check out your old entries",
+                  text: "Check out your previous entries",
                   type: "success"
                   }).then(function() {
                   // Redirect the user
@@ -109,7 +98,7 @@ class Entry extends React.Component {
   
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">What's on your mind?</label>
-          <input type="text" 
+          <textarea type="text" 
           className="form-control inputEntry" 
           onChange = {this.handleChange} 
           value = {this.state.entry}

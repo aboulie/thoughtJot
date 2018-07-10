@@ -2,6 +2,7 @@ import React from "react";
 import "./Login.css";
 import Background from '../../images/bg3.jpeg';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 class Login extends React.Component {
   state = {
@@ -33,6 +34,14 @@ class Login extends React.Component {
     }).catch(function(error){
       console.log("we got error");
       console.log(error);
+      swal({
+        title: "Uh Oh!",
+        text: "Incorrect Email or Password. Try again.",
+        type: "danger"
+        }).then(function() {
+        // Redirect the user
+        console.log('The Ok Button was clicked.');
+        });
     })
   }
 
