@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import Background from '../../images/background.png';
+import Background from '../../images/bg3.jpeg';
 import axios from 'axios';
 
 class Login extends React.Component {
@@ -39,12 +39,15 @@ class Login extends React.Component {
   render() {
     return (
     <div className="container">
-           <div className="card text-center">
+    <div className="row">
+    <div className="col-sm-3"></div>
+    <div className="col-sm-3">
+           <div className="card text-center cardDown">
                 <div className="card-body">
                     <h5 className="card-title">Login</h5>
                 </div>
             </div>
-      <form className="centered">
+      <form className="centered border-0">
 
   
         <div className="form-group">
@@ -73,6 +76,8 @@ class Login extends React.Component {
         <a href="/signup">Sign Up Here</a>
         </p> 
     </form>
+    </div>
+    </div>
 </div>
 
 

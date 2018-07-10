@@ -2,7 +2,7 @@ import React from "react";
 import "./Entry.css";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
-import Background from '../../images/background.png';
+import Background from '../../images/bg2.jpeg';
 import swal from 'sweetalert';
 
 class Entry extends React.Component {

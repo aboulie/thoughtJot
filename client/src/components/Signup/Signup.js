@@ -1,6 +1,6 @@
 import React from "react";
 import "./Signup.css";
-import Background from '../../images/background.png';
+import Background from '../../images/bg3.jpeg';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -53,12 +53,12 @@ class Signup extends React.Component {
   render() {
     return (
     <div className="container">
-           <div className="card text-center">
+           <div className="card text-center cardDown">
                 <div className="card-body">
                     <h5 className="card-title">Sign Up Here</h5>
                 </div>
             </div>
-      <form className="centered">
+      <form className="centered border-0">
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Name</label>
             <input 

@@ -3,7 +3,7 @@ import React from "react";
 // import axios from "axios";
 import "./Home.css";
 // import swal from 'sweetalert';
-import Background from '../../images/journal.jpeg';
+import Background from '../../images/journall.jpeg';
 
 // const mainBg = {
 //     backgroundImage: `url(${Background})`,

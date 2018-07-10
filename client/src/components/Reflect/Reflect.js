@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Reflect.css";
-import Background from '../../images/background.png';
+import Background from '../../images/test2.png';
 import { Redirect, Link } from 'react-router-dom';
 
 
@@ -68,7 +68,7 @@ class Reflect extends React.Component {
               <div class="card-header titleStyle">
                 {iterator.title}
               </div>
-              <div class="card-body">
+              <div class="card-body parchment">
                {/* <div className="imageStyle">
                <img className="img-fluid" src={iterator.image} alt={iterator.title}/>
               </div> */}
