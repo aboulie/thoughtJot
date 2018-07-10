@@ -2,7 +2,7 @@
 ## Your Password Protected Digital Diary  
 
 ## **Link to App Demo** 
-[Click Here for Live Link!](https://www.google.com)
+## [Click Here for Live Link!](https://www.google.com)
 
 ![Alt Text](https://media.giphy.com/media/lzo6kkN469WuXr8Nqv/giphy.gif)
 
