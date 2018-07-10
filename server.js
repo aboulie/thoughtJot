@@ -103,3 +103,9 @@ db.sequelize.sync().then(function(){
 })
 
 module.exports = app;
+
+
+
+//dev note:
+//place the following in start script in package.json for development. "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"
+//I changed the start script in order to deploy to heroku 
