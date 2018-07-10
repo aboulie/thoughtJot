@@ -16,28 +16,12 @@ form{
     color: black;
 }
 
-.cardDown{
-    margin-top: 130px;
-    margin-left: -100px;
-
-  }
-
-  /* .card-title{
-    font-size: 28px;
-    margin-bottom: -12px;
-  } */
-
-
 .submitStyle{
     border: .5px solid lightgray; 
-    background: #e4eddd;
+    /* background: #e4eddd; */
     border-radius: 0;
     margin-top: 10px;
 }
-
-/* .centered {
-    margin: 0 auto;
-  } */
 
   .already {
       margin-top: -18px;
@@ -46,24 +30,11 @@ form{
 
 
   .signUpCard{
-      margin-left: -100px;
+      margin-top: 80px;
+      margin-left: -500px;
   }
- /* unvisited link */
-/* a:link {
-    color:#8ca778;
-} */
 
-/* visited link */
-/* a:visited {
-    color:#8ca778;
-} */
-
-/* mouse over link */
-/* a:hover {
-    color: #cee1c0;
-} */
-
-/* selected link */
-/* a:active {
-    color:#cee1c0;
-} */
+  .signUpTitle{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+  }

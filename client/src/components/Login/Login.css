@@ -15,50 +15,24 @@ form{
     border-radius: 0;
     color: black;
 }
+
 .submitStyle{
     border: .5px solid lightgray; 
-    background: #e4eddd;
+    /* background: #e4eddd; */
     border-radius: 0;
     margin-top: 10px;
 }
-
-/* .centered {
-    margin: 0 auto;
-  } */
-
-  .cardDown{
-    margin-top: 130px;
-    margin-left: -80px;
-
-  }
-
-  /* .card-title{
-    font-size: 28px;
-    margin-bottom: -12px;
-  } */
-
 
   .already {
     padding-top: 40px;
     font-size: 12px;
 }
-/* 
-unvisited link
-a:link {
-  color:#8ca778;
+
+.loginTitleStyle{
+  font-size: 28px;
 }
 
-/* visited link */
-/* a:visited {
-  color:#8ca778;
-} */
-
-/* mouse over link */
-/* a:hover {
-  color: #cee1c0;
-} */
-
-/* selected link */
-/* a:active {
-  color:#cee1c0;
-} */ 
+.loginCard{
+  margin-left: -500px;
+  margin-top: 100px;
+}

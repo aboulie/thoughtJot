@@ -56,10 +56,11 @@ class Signup extends React.Component {
     <div className="container">
            <div className="card text-center cardDown">
                 <div className="card-body signUpCard">
-                    <h5 className="card-title">Sign Up Here</h5>
+                   
                 </div>
             </div>
       <form className="centered border-0">
+      <p className="signUpTitle">Sign Up Here</p>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Name</label>
             <input 

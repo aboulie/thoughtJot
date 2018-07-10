@@ -92,11 +92,12 @@ class Entry extends React.Component {
     return (
     <div className="container">
            <div className="card text-center">
-                <div className="card-body">
-                    <h5 className="card-title">Jot Down Your Thoughts</h5>
+                <div className="card-body jotCard">
+                    
                 </div>
             </div>
       <form className="centered">
+      <p className="card-title jotTitle">Jot Down Your Thoughts</p>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Entry Title</label>
             <input type="text" 
@@ -110,14 +111,14 @@ class Entry extends React.Component {
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">What's on your mind?</label>
           <input type="text" 
-          className="form-control" 
+          className="form-control inputEntry" 
           placeholder="Required: Thoughts"
           onChange = {this.handleChange} 
           value = {this.state.entry}
           name = "entry" />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="exampleInputEmail1">A picture is worth 1000 words...</label>
           <input type="text" 
           className="form-control" 
@@ -125,7 +126,7 @@ class Entry extends React.Component {
           onChange = {this.handleChange} 
           value = {this.state.image}
           name = "image"/>
-        </div>
+        </div> */}
 
         <button type="submit" 
         className="btn btn-light submitStyle"

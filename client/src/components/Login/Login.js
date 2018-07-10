@@ -42,15 +42,16 @@ class Login extends React.Component {
     <div className="row">
     <div className="col-sm-3"></div>
     <div className="col-sm-3">
-           <div className="card text-center cardDown">
+           <div className="card text-center loginCard">
                 <div className="card-body">
-                    <h5 className="card-title">Login</h5>
+                    
                 </div>
             </div>
       <form className="centered border-0">
 
   
         <div className="form-group">
+        <p className="card-title loginTitleStyle">Login</p>
           <label htmlFor="exampleInputEmail1">Email</label>
           <input type="text" 
           className="form-control" id="exampleInputEmail1" 
