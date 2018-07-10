@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const app = express();
 var passport = require('passport');
-var nodemon = require("nodemon");
 var mysql2 = require("mysql2");
 var bcrypt = require("bcrypt");
 var LocalStrategy = require('passport-local').Strategy;
