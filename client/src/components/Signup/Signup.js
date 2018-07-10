@@ -4,7 +4,6 @@ import Background from '../../images/bg3.jpeg';
 import axios from 'axios';
 import swal from 'sweetalert';
 
-
 class Signup extends React.Component {
   state = {
     name: "",
@@ -32,10 +31,6 @@ class Signup extends React.Component {
       name, email, password
     }).then(function(data){
         console.log(data);
-        // //sweet alert
-        // swal("You're all signed up!", "Log in to see your account!", "success");
-        // //then redirect
-        // window.location.href = "/login";
         swal({
           title: "Congrats! You Signed Up!",
           text: "Get started by logging in",
@@ -43,10 +38,16 @@ class Signup extends React.Component {
           }).then(function() {
           // Redirect the user
           window.location.href = "/login";
-          console.log('The Ok Button was clicked.');
           });
     }).catch(function(error){
       console.log(error);
+        swal({
+          title: "Signup invalid. Try Again",
+          text: "Be sure to use name, email address, and password",
+          type: "danger"
+          }).then(function() {
+          console.log('The Ok Button was clicked.');
+          });
     })
   }
 
@@ -54,7 +55,7 @@ class Signup extends React.Component {
     return (
     <div className="container">
            <div className="card text-center cardDown">
-                <div className="card-body">
+                <div className="card-body signUpCard">
                     <h5 className="card-title">Sign Up Here</h5>
                 </div>
             </div>
@@ -97,9 +98,6 @@ class Signup extends React.Component {
 
     </form>
 </div>
-
-
-
 
        )
     }

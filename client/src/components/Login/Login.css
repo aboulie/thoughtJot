@@ -32,33 +32,33 @@ form{
 
   }
 
-  .card-title{
+  /* .card-title{
     font-size: 28px;
     margin-bottom: -12px;
-  }
+  } */
 
 
   .already {
     padding-top: 40px;
     font-size: 12px;
 }
-
-/* unvisited link */
+/* 
+unvisited link
 a:link {
   color:#8ca778;
 }
 
 /* visited link */
-a:visited {
+/* a:visited {
   color:#8ca778;
-}
+} */
 
 /* mouse over link */
-a:hover {
+/* a:hover {
   color: #cee1c0;
-}
+} */
 
 /* selected link */
-a:active {
+/* a:active {
   color:#cee1c0;
-}
+} */ 
