@@ -48,7 +48,7 @@ class Reflect extends React.Component {
         } else {
         return (
           <div className="container">
-            <h1 className="test">My Enteries</h1>
+            <h1 className="test">My Entries</h1>
             <Link to="/entry">
         <button type="submit" 
         className="btn btn-light submitStyle">Post new entry</button>
