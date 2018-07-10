@@ -1,25 +1,25 @@
 # thoughtJot
 ## Your Password Protected Digital Diary  
 
-## **Link to App Demo** 
 ## [Click Here for Live Link!](https://www.google.com)
 
 ![Alt Text](https://media.giphy.com/media/lzo6kkN469WuXr8Nqv/giphy.gif)
 
 ### Overview
-This is a fullstack MERN app that uses react.js for the frontend UI. The backend uses express.js server, mongoDB and mongoose for serverside programming and database handling. With this app, users can search the New York Times API using a Search Term, and optional Start and End years. Users can save articles and delete articles from the saved list. 
+This is a fullstack web application that allows users to login in to their own accounts, and write journal entries that only they can see. It is a password protected digital diary. This app uses react.js for the frontend UI. The backend uses express.js server, mySQL and sequelize for serverside programming and database handling. This app uses passport.js for authentication. 
 
 ### Technologies Used
 - react.js
-- JSX
+- mySQL, sequelize 
+- JSX, ES6, JavaScript
 - express.js
 - node.js
-- ES6, JavaScript
 - HTML5
 - CSS3, Bootstrap
 - SweetAlert npm package
 - Yarn 
 - Heroku 
+
 
 
 
