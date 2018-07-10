@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Reflect.css";
 import Background from '../../images/test2.png';
 import { Redirect, Link } from 'react-router-dom';
+import moment from 'moment';
 
 
 
@@ -72,7 +73,7 @@ class Reflect extends React.Component {
                {/* <div className="imageStyle">
                <img className="img-fluid" src={iterator.image} alt={iterator.title}/>
               </div> */}
-
+              <p>{iterator.createdAt.substring(0, 10)}</p>
               <p class="card-text">{iterator.entry}</p>
   </div>
 </div>
