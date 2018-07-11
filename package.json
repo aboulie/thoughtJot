@@ -4,6 +4,7 @@
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
     "start": "node server.js"
   },
   "author": "",
