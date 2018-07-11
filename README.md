@@ -1,7 +1,7 @@
 # thoughtJot
 ## Your Password Protected Digital Diary  
 
-## [Click Here for Live Link!](https://www.google.com)
+## [Click Here for Live Link!](https://fast-lowlands-64757.herokuapp.com/)
 
 ![Alt Text](https://media.giphy.com/media/lzo6kkN469WuXr8Nqv/giphy.gif)
 
