@@ -2,7 +2,7 @@ import React from "react";
 import "./Entry.css";
 import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
-import Background from '../../images/bg5.jpeg';
+import Background from '../../images/test2.png';
 import swal from 'sweetalert';
 
 class Entry extends React.Component {
@@ -79,18 +79,20 @@ class Entry extends React.Component {
 		} else {
 
     return (
-    <div className="container">
+      <div className="container-fluid h-100">
+      <div className="row justify-content-center align-items-center h-100">
+      <div className="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
            <div className="card text-center">
                 <div className="card-body jotCard">
                     
                 </div>
             </div>
-      <form className="centered border-0">
-      <p className="card-title jotTitle">Jot Down Your Thoughts</p>
+      <form className="centered border-0 jotForm">
+      <p className="card-title jotTitle signUpTitle">Jot Down Your Thoughts</p>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Entry Title</label>
             <input type="text" 
-            className="form-control" 
+            className="form-control form-control-lg" 
             onChange = {this.handleChange} 
             value = {this.state.title}
             name = "title" />
@@ -99,7 +101,7 @@ class Entry extends React.Component {
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">What's on your mind?</label>
           <textarea type="text" 
-          className="form-control inputEntry" 
+          className="form-control form-control-lg"  
           onChange = {this.handleChange} 
           value = {this.state.entry}
           name = "entry" />
@@ -116,21 +118,23 @@ class Entry extends React.Component {
         </div> */}
 
         <button type="submit" 
-        className="btn btn-light submitStyle"
+        className="btn btn-light submitStyle entryBtn"
         onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
         >Submit New Entry</button>
 
  <Link to="/reflect">
         <button type="submit" 
-        className="btn btn-light submitStyle">See Your Entries</button>
+        className="btn btn-light submitStyle entryBtn">See Your Entries</button>
 </Link>
 
         <button type="submit" 
-        className="btn btn-light submitStyle"
+        className="btn btn-light submitStyle entryBtn"
         onClick={(event)=>this.handleLogout(event)}
         >Logout</button>
         
     </form>
+</div>
+</div>
 </div>
 
        )

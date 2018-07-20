@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import Background from '../../images/bg3.jpeg';
+import Background from '../../images/test2.png';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -47,10 +47,9 @@ class Login extends React.Component {
 
   render() {
     return (
-    <div className="container">
-    <div className="row">
-    <div className="col-sm-3"></div>
-    <div className="col-sm-3">
+      <div className="container-fluid h-100">
+    <div className="row justify-content-center align-items-center h-100">
+    <div className="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
            <div className="card text-center loginCard">
                 <div className="card-body">
                     
@@ -60,10 +59,10 @@ class Login extends React.Component {
 
   
         <div className="form-group">
-        <p className="card-title loginTitleStyle">Login</p>
+        <p className="card-title signUpTitle">Login</p>
           <label htmlFor="exampleInputEmail1">Email</label>
           <input type="text" 
-          className="form-control" id="exampleInputEmail1" 
+          className="form-control form-control-lg" id="exampleInputEmail1" 
           onChange = {this.handleChange} 
           value = {this.state.email}
           name = "email"/>
@@ -71,14 +70,14 @@ class Login extends React.Component {
 
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1"
+          <input type="password" className="form-control form-control-lg" id="exampleInputPassword1"
           onChange = {this.handleChange}
           value = {this.state.password}
           name = "password" />
         </div>
 
         <button type="submit" 
-        className="btn btn-light submitStyle"
+        className="btn btn-light btn-lg btn-block"
         onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
         >Submit</button>
 
@@ -87,6 +86,7 @@ class Login extends React.Component {
         </p> 
     </form>
     </div>
+    
     </div>
 </div>
 

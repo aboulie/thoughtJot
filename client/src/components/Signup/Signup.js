@@ -1,6 +1,6 @@
 import React from "react";
 import "./Signup.css";
-import Background from '../../images/bg3.jpeg';
+import Background from '../../images/test2.png';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -13,6 +13,7 @@ class Signup extends React.Component {
 
   componentDidMount(){
     document.body.style.backgroundImage=`url(${Background})`;
+    // document.body.style.backgroundColor = "white";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
   }
@@ -53,53 +54,52 @@ class Signup extends React.Component {
 
   render() {
     return (
-    <div className="container">
-           <div className="card text-center cardDown">
-                <div className="card-body signUpCard">
-                   
-                </div>
+      <div className="container-fluid h-100">
+      <div className="row justify-content-center align-items-center h-100">
+        <div className="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+          <form className="centered signupLower">
+            <p className="signUpTitle">Sign Up Here</p>
+            <div className="form-group">
+              <label htmlFor="exampleInputEmail1">Name</label>
+              <input 
+              type="text" 
+              className="form-control form-control-lg" 
+              onChange = {this.handleChange}
+              value = {this.state.name}
+              name = "name" />
             </div>
-      <form className="centered border-0">
-      <p className="signUpTitle">Sign Up Here</p>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Name</label>
-            <input 
-            type="text" 
-            className="form-control" 
-            onChange = {this.handleChange}
-            value = {this.state.name}
-            name = "name" />
-        </div>
   
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email</label>
-          <input type="text" 
-          className="form-control" id="exampleInputEmail1" 
-          onChange = {this.handleChange}
-          value = {this.state.email}
-          name = "email" />
-        </div>
+            <div className="form-group">
+              <label htmlFor="exampleInputEmail1">Email</label>
+              <input 
+              type="text" 
+              className="form-control form-control-lg"  id="exampleInputEmail1" 
+              onChange = {this.handleChange}
+              value = {this.state.email}
+              name = "email" />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1"
-          onChange = {this.handleChange}
-          value = {this.state.password}
-          name = "password" />
-        </div>
+            <div className="form-group">
+              <label htmlFor="exampleInputPassword1">Password</label>
+              <input type="password" 
+              className="form-control form-control-lg"  id="exampleInputPassword1"
+              onChange = {this.handleChange}
+              value = {this.state.password}
+              name = "password" />
+            </div>
 
-        <button type="submit" 
-        className="btn btn-light submitStyle"
-        onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
-        >Submit</button>
+            <button type="submit" 
+            className="btn btn-light btn-lg btn-block"
+            onClick={(event)=>this.handleSubmit(event, this.state.searchTerm)}
+            >Submit</button>
 
-        <p className="already">Already a thoughtJotter? 
-        <a href="/login">Login Here</a>
-        </p>
-
-    </form>
-</div>
-
+            <p className="already">Already a thoughtJotter? 
+            <a href="/login"> Login Here</a>
+            </p>
+        </form>
+      </div>
+    </div>
+  </div>
        )
     }
 }

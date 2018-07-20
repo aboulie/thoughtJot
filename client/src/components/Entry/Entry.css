@@ -1,40 +1,11 @@
-form{
-    /* background: #f2f5f1; */
-    background: white;
-    justify-content: center;
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 380px;
-    max-height: 380px;
-    padding: 30px 20px 20px 20px;
-    border: .5px solid lightgray;
+.entryBtn {
+    margin-right: 5px;
 }
 
-.form-control{
-    background:#f2f5f1;
-    border-radius: 0;
-    color: black;
-}
-.submitStyle{
-    border: .5px solid lightgray; 
-    border-radius: 0;
-    margin-top: 10px;
-    margin-right: 10px;
+.jotForm{
+    min-width: 430px;;
 }
 
-.centered {
-    margin: 0 auto;
-  }
-
-  .inputEntry{
-      min-height: 180px;
-      max-height: 180px;
-  }
-
-  .jotTitle{
-    font-size: 20px;
-  }
-
-  /* .jotCard{
-      margin-top: 180px;
-  } */
+textarea {
+    min-height: 300px;
+}

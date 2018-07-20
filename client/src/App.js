@@ -7,6 +7,7 @@ import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Entry from "./components/Entry"
 import Reflect from "./components/Reflect"
+import Footer from "./components/Footer"
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         </Switch>
       </div>
 </Router>
+{/* <Footer /> */}
 </div>
     );
   }
