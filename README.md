@@ -1,7 +1,7 @@
 # thoughtJot
 ## Your Password Protected Digital Diary  
 
-## [Live Link Coming Soon!](https:www.google.com)
+## [Live Link Coming Soon!](https://www.google.com)
 
 ![Alt Text](https://media.giphy.com/media/lzo6kkN469WuXr8Nqv/giphy.gif)
 
